@@ -1,0 +1,70 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\title{\LaTeX -Beamer Theme TH Köln}
+\institute[TH Köln]{Technische Hochschule Köln}
+\date{\today}
+\author[de Koster]{Markus de Koster}
+
+\usetheme{thk}
+\usepackage[ngerman]{datetime}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Inhalt}
+    \tableofcontents
+\end{frame}
+
+\section{Wie sehen Aufzählungen aus?}\label{sec:enumerations}
+\begin{frame} 
+\frametitle{Wie sehen Aufzählungen aus?} 
+\framesubtitle{Ein Beispiel für Aufzählungen} 
+\begin{theorem}
+    Hier steht ein theorem
+\end{theorem} 
+\begin{enumerate} 
+    \item Hier steht ein item 
+    \begin{enumerate} 
+        \item Hier steht ein subitem
+        \begin{enumerate} 
+            \item Hier steht ein subsubitem
+        \end{enumerate}
+    \end{enumerate}
+    \item Hier steht noch ein etwas längeres item, um den Zeilenumbruch zu zeigen. 
+    Dieser wird automatisch gesetzt, sobald die Zeile zu lang wird.
+\end{enumerate}
+\end{frame}
+
+\subsection{Wie sehen Bulletpoints aus?}\label{sec:itemize}
+\begin{frame}{Wie sehen Aufzählungen aus?}
+\begin{itemize}
+\item one
+\begin{itemize}
+    \item two
+    \begin{itemize}
+        \item three
+    \end{itemize}    
+\end{itemize}    
+\item four
+\end{itemize}
+\end{frame}
+
+\section{Eine weitere Section}\label{sec:another_section}
+\begin{frame}{Eine weitere Section}
+    \begin{itemize}
+    \item one
+    \begin{itemize}
+        \item two
+        \begin{itemize}
+            \item three
+        \end{itemize}    
+    \end{itemize}    
+    \item four
+    \end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,53 @@
+
+\mode<presentation>
+
+\setbeamertemplate{background}{
+    \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    % (0,0) start at X=0, Y=0 draw a rectangle to (1/3 of paperwidth and Y=0.2)
+    \fill[color=thk-red] (0,0) rectangle(\the\paperwidth/3,0.2); 
+    \fill[color=thk-orange] (\the\paperwidth/3,0) rectangle(2*\the\paperwidth/3,0.2);
+    \fill[color=thk-violet] (2*\the\paperwidth/3,0) rectangle(3*\the\paperwidth/3,0.2);
+    \ifnum\thepage>1\relax % attempt at writing title author and date into the bottom rectangles on every page except for title
+        %\node at (0,0) {\small \insertauthor};
+        %\node at (\the\paperwidth/3,0) {\small \inserttitle};
+        %\node at (2*\the\paperwidth/3,0) {\small \insertdate};
+    \fi
+    \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{thk}[1][]
+{ 
+    
+    \begin{figure}[!htb]
+        \vspace*{-1cm}
+        \hspace*{-.9\linewidth}
+        \includesvg[width=.25\linewidth]{thk-logo}
+    \end{figure}
+    \vspace*{1.5cm}
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
+        \usebeamerfont{title}\inserttitle\par
+    \end{beamercolorbox}
+    \vskip0.75cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+        \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \vskip0.2cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{institue}
+        \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \vskip0.2cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+        \usebeamerfont{date}\insertdate%
+    \end{beamercolorbox}
+    \vfill
+}
+
+% Items
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+\mode
+<all>
