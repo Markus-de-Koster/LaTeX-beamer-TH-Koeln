@@ -5,13 +5,22 @@
     \begin{tikzpicture}
     \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
     % (0,0) start at X=0, Y=0 draw a rectangle to (1/3 of paperwidth and Y=0.2)
-    \fill[color=thk-red] (0,0) rectangle(\the\paperwidth/3,0.2); 
-    \fill[color=thk-orange] (\the\paperwidth/3,0) rectangle(2*\the\paperwidth/3,0.2);
-    \fill[color=thk-violet] (2*\the\paperwidth/3,0) rectangle(3*\the\paperwidth/3,0.2);
+    \fill[color=thk-red] (0,0) rectangle(\the\paperwidth/3,0.3); 
+    \fill[color=thk-orange] (\the\paperwidth/3,0) rectangle(2*\the\paperwidth/3,0.3);
+    \fill[color=thk-violet] (2*\the\paperwidth/3,0) rectangle(3*\the\paperwidth/3,0.3);
     \ifnum\thepage>1\relax % attempt at writing title author and date into the bottom rectangles on every page except for title
         %\node at (0,0) {\small \insertauthor};
         %\node at (\the\paperwidth/3,0) {\small \inserttitle};
         %\node at (2*\the\paperwidth/3,0) {\small \insertdate};
+        \node[text width=\the\paperwidth/3, font=\fontsize{7pt}{7pt}\selectfont, text=white]
+            (N1) at (0.8*\the\paperwidth/3,0.15) 
+            {\insertshortauthor};
+        \node[text width=\the\paperwidth/3, font=\fontsize{7pt}{7pt}\selectfont, text=white]
+            (N2) at (1.55*\the\paperwidth/3,0.15) 
+            {\inserttitle};
+        \node[text width=\the\paperwidth/3, font=\fontsize{7pt}{7pt}\selectfont, text=white]
+            (N3) at (2.7*\the\paperwidth/3,0.15) 
+            {\insertdate};
     \fi
     \end{tikzpicture}
 }
@@ -27,7 +36,13 @@
     \end{figure}
     \vspace*{1.5cm}
     \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
-        \usebeamerfont{title}\inserttitle\par
+        \usebeamerfont{title}\inserttitle
+    \end{beamercolorbox}
+    \vspace*{0.2cm}
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{subtitle page header}
+        \usebeamerfont{subtitle}
+        \usebeamercolor[fg]{subtitle}
+        \insertsubtitle\par
     \end{beamercolorbox}
     \vskip0.75cm
     \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
