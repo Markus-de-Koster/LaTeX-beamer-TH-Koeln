@@ -53,18 +53,21 @@
 \end{itemize}
 \end{frame}
 
-\section{Eine weitere Section}\label{sec:another_section}
-\begin{frame}{Eine weitere Section}
-    \begin{itemize}
-    \item one
-    \begin{itemize}
-        \item two
-        \begin{itemize}
-            \item three
-        \end{itemize}    
-    \end{itemize}    
-    \item four
-    \end{itemize}
+\section{Grafiken}\label{sec:graphics}
+\begin{frame}{Grafiken}
+    \begin{figure}\label{thk-linien}
+        \includegraphics[width=\textwidth]{./thk-lines.png}
+        \caption[TH Köln lines]{TH Köln lines. Adaptiert von \cite{source}}
+    \end{figure}
+\end{frame}
+
+\subsection{Grafiken nach Höhe}\label{sec:graphics_height}
+\begin{frame}{Grafiken nach Höhe}
+    \begin{figure}\label{thk-linien-hoch}
+        \includesvg[height=\textheight]{./thk-logo.svg} %there's an error with textheight
+        %should use textwidth instead as shown above
+        \caption[TH Köln lines]{TH Köln lines. Adaptiert von \cite{source}}
+    \end{figure}
 \end{frame}
 
 \end{document}
