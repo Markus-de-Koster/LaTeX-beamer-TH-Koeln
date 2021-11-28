@@ -1,0 +1,42 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{thk}[1][]
+{
+\vskip1cm%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=0cm]{frametitle} 
+        \begin{tikzpicture}
+            \fill[thk-orange, opacity=0.1] (0,0.8) rectangle(\the\paperwidth,2.9);
+            \ifx\insertframesubtitle\@empty%
+                {\node[anchor=west, black,font=\large] at (1,1.5){\insertframetitle};}
+            \else%
+                {\node[anchor= west, black,font=\large] at (1,1.7){\insertframetitle};%
+                \node[anchor= west, black,font=\small] at (1,1.3){\insertframesubtitle};}%
+            \fi
+        \end{tikzpicture}
+    \end{beamercolorbox}
+}
+
+%change color of itemize bullet points
+\setbeamercolor*{itemize item}{fg=thk-red}
+\setbeamercolor*{itemize subitem}{fg=thk-orange}
+\setbeamercolor*{itemize subsubitem}{fg=thk-violet}
+%\setbeamercolor*{item projected}{fg=red} 
+
+%change color of enumerate bullet points
+\setbeamercolor*{enumerate item}{fg=thk-red}
+\setbeamercolor*{enumerate subitem}{fg=thk-orange}
+\setbeamercolor*{enumerate subsubitem}{fg=thk-violet}
+%\setbeamercolor*{theorem}{fg=thk-violet}
+
+%change color of items in toc
+\setbeamercolor{section in toc}{fg=black} 
+\setbeamercolor{subsection in toc}{fg=black} 
+
+%change font of number in toc section
+\setbeamerfont{section number projected}{%
+  family=\rmfamily,series=\bfseries,size=\normalsize}
+\setbeamercolor{section number projected}{bg=white,fg=thk-orange}
+%\setbeamercolor{subsection number projected}{bg=white,fg=thk-orange} %this doesn't do anything
+%\setbeamercolor{subsubsection number projected}{bg=white,fg=thk-violet}
+\mode<all>
