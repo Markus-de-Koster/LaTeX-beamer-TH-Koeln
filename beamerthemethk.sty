@@ -20,6 +20,8 @@
 %all the rest, mostly used for width calculations
 \newcommand{\thkrest}{0.9*\the\paperwidth}
 
+% command defining a supervisor
+% this can also be used for different text in the footer, e.g. subtitle or institue
 \newcommand{\supervisor}{\@dblarg\beamer@supervisor}
 \long\def\beamer@supervisor[#1]#2{%
   \def\insertsupervisor{#2}  %
@@ -27,6 +29,7 @@
   }
 \supervisor[Supervisor]{Supervisor or different subtext}
 
+% localization of the page counter. defaults to P. / Page
 \newcommand{\pagefooterlocalization}{\@dblarg\beamer@pagefooterlocalization}
 \long\def\beamer@pagefooterlocalization[#1]#2{%
   \def\insertpagefooterlocalization{#2}  %
