@@ -4,6 +4,8 @@
 \RequirePackage{tikz}
 \usepackage{svg}
 \usepackage{anyfontsize}
+\usepackage{helvet} % let's use a more readable font for presentations
+\renewcommand{\familydefault}{\sfdefault} % belongs to font command above
 
 % Settings
 \useinnertheme{thk}
@@ -11,6 +13,13 @@
 \usecolortheme{thk}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{blocks}[rounded][shadow=true]  
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+%left margin, start at 10% of the screen
+\newcommand{\thkmarginleft}{0.10*\the\paperwidth}
+%all the rest, mostly used for width calculations
+\newcommand{\thkrest}{0.9*\the\paperwidth}
+
+%
 
 \mode<all>
