@@ -33,22 +33,10 @@
     \tableofcontents
 \end{frame}
 
-\section{Wie sehen Aufzählungen aus?}\label{sec:enumerations}
+\section{Aufzählungen}\label{sec:enumerations}
 \begin{frame} 
-    \frametitle{Wie sehen Aufzählungen aus?} 
+    \frametitle{Aufzählungen} 
     \framesubtitle{Ein Beispiel für Aufzählungen} 
-    \begin{theorem}
-        Hier steht ein theorem oder Beispiel in default Farbe
-    \end{theorem}
-
-    % change the color of theorems from now on
-    \AtBeginEnvironment{theorem}{%
-        \setbeamercolor{block title}{use=example text,fg=white,bg=thk-orange}
-        \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
-    }
-    \begin{theorem}
-        Hier steht ein zweites theorem in anderer Farbe
-    \end{theorem}
     \begin{enumerate} 
         \item Hier steht ein item 
         \begin{enumerate} 
@@ -62,18 +50,45 @@
     \end{enumerate}
 \end{frame}
 
-\subsection{Wie sehen Bulletpoints aus?}\label{sec:itemize}
-\begin{frame}{Wie sehen Aufzählungen aus?}
-\begin{itemize}
-\item one
-\begin{itemize}
-    \item two
+\subsection{Bulletpoints}\label{sec:itemize}
+\begin{frame}[allowframebreaks]{Bulletpoints}
     \begin{itemize}
-        \item three
-    \end{itemize}    
-\end{itemize}    
-\item four
-\end{itemize}
+        \item Die erste Stufe ist in rot
+        \begin{itemize}
+            \item die zweite in orange
+            \begin{itemize}
+                \item die dritte in Violet
+                \item mehr als drei mal darf nicht indentiert werden
+            \end{itemize}    
+            \item Die Schrift wird je Stufe etwas kleiner
+        \end{itemize}    
+        \item Weitere bulletpoints haben die selbe Farbe
+        \item Dadurch, dass am Beginn dieses Frames das Attribut "allowframebreaks" gesetzt wurde, wird automatisch eine neue Slide geöffnet, wenn diese voll ist
+        \begin{itemize}
+            \item dafür müssen wir allerdings den "itemize" Bereich verlassen
+            \item \dots
+        \end{itemize}
+    \end{itemize}
+    Hier steht Text außerhalb von Bulletpoints. Wenn dieser Text lang genug ist, wird er auf die nächste Seite geschoben.
+    Dadurch wird automatisch im Titel der Seite ein Zähler eingefügt. 
+    Innerhalb eines itemize erfolgt kein Seitenumbruch. Stattdessen werden die items skaliert. Das selbe gilt für Grafiken, Tabellen, etc.
+\end{frame}
+
+\section{Theoreme / Beispiele}\label{sec:theorem}
+\begin{frame} 
+    \frametitle{Theoreme und Beispiele} 
+    \begin{theorem}
+        Hier steht ein theorem oder Beispiel in default Farbe
+    \end{theorem}
+
+    % change the color of theorems from now on
+    \AtBeginEnvironment{theorem}{%
+        \setbeamercolor{block title}{use=example text,fg=white,bg=thk-orange}
+        \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+    }
+    \begin{theorem}
+        Hier steht ein zweites theorem in anderer Farbe. Es ist länger als eine Zeile, daher erfolgt ein automatischer Zeilenumbruch
+    \end{theorem}
 \end{frame}
 
 \section{Grafiken}\label{sec:graphics}
