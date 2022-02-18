@@ -30,14 +30,25 @@
         \fi
 
         % page %
-        \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
-            (N_date) at (\thkmarginleft,0.06*\the\paperheight) 
-            {\insertpagefooterlocalization \thepage};
-
+        \ifx\insertshortsupervisor\empty
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+                (N_date) at (\thkmarginleft,0.06*\the\paperheight) 
+                {\insertpagefooterlocalization \thepage};
+        \else
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+                (N_date) at (\thkmarginleft,0.06*\the\paperheight) 
+                {\insertshortpagefooterlocalization \thepage};
+        \fi
         % supervisor %
-        \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
-            (N_supervisor) at (2*\thkmarginleft,0.12*\the\paperheight) 
-            {\insertsupervisor};
+        \ifx\insertshortsupervisor\empty
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+                (N_supervisor) at (2*\thkmarginleft,0.12*\the\paperheight) 
+                {\insertsupervisor};
+        \else
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+                (N_supervisor) at (2*\thkmarginleft,0.12*\the\paperheight) 
+                {\insertshortsupervisor};
+        \fi
 
         % title %
         \ifx\insertshortsubtitle\empty % check if a short title exists
