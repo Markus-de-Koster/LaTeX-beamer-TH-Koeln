@@ -1,6 +1,6 @@
 default:
     tags:
-      - asprunner
+      - gitlab-org
 stages:
   - compile_pdf
 
