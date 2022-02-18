@@ -28,31 +28,19 @@
 % Title page
 \defbeamertemplate*{title page}{thk}[1][]
 { 
-    
-    
-    \vspace*{1.5cm}
-    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
-        \usebeamerfont{title}\inserttitle
-    \end{beamercolorbox}
-    \vspace*{0.2cm}
-    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{subtitle page header}
-        \usebeamerfont{subtitle}
-        \usebeamercolor[fg]{subtitle}
-        \insertsubtitle\par
-    \end{beamercolorbox}
-    \vskip0.75cm
-    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
-        \usebeamerfont{author}\insertauthor
-    \end{beamercolorbox}
-    \vskip0.2cm
-    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{institue}
-        \usebeamerfont{institute}\insertinstitute
-    \end{beamercolorbox}
-    \vskip0.2cm
-    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
-        \usebeamerfont{date}\insertdate%
-    \end{beamercolorbox}
-    \vfill
+    \begin{tikzpicture}
+        \useasboundingbox (0,0.15\paperheight) rectangle(\the\paperwidth,\the\paperheight);
+        \node[anchor=west, font=\fontsize{15pt}{15pt}\selectfont, text=black]
+            (N_titleA) at (0,0.85*\the\paperheight) 
+            {\inserttitle};
+        \node[anchor=west, font=\fontsize{10pt}{10pt}\selectfont, text=gray]
+            (N_titleA) at (0,0.77*\the\paperheight) 
+            {\insertsubtitle};
+        %\node[anchor=west, font=\fontsize{8pt}{8pt}\selectfont, text=black]
+        %    (N_titleA) at (\thkmarginleft,0.68*\the\paperheight) 
+        %    {\insertinstitute};
+        
+    \end{tikzpicture}
 }
 
 % Items
@@ -71,6 +59,10 @@
 \setbeamercolor*{enumerate subitem}{fg=thk-orange}
 \setbeamercolor*{enumerate subsubitem}{fg=thk-violet}
 %\setbeamercolor*{theorem}{fg=thk-violet}
+\AtBeginEnvironment{theorem}{%
+  \setbeamercolor{block title}{use=example text,fg=white,bg=thk-violet}
+  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
 
 %change color of subtitle
 \setbeamercolor*{subtitle}{fg=gray}

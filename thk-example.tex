@@ -4,6 +4,11 @@
 \usepackage[ngerman]{datetime}
 \renewcommand{\dateseparator}{..} % use dots instead of slashes to seperate dates
 \usetheme{thk}
+% custom colors:
+% thk-red
+% thk-orange
+% thk-violet
+
 
 \title{\LaTeX -Beamer Theme TH Köln}
 \subtitle[Beispielpräsi]{Eine Beispielpräsentation}
@@ -18,7 +23,9 @@
 \begin{document}
 
 \begin{frame}
-\titlepage
+    \vspace{2em} %some distance to the top
+    \includegraphics[width=\textwidth]{figures/thk.jpg}
+    \titlepage
 \end{frame}
 
 \begin{frame}
@@ -28,22 +35,31 @@
 
 \section{Wie sehen Aufzählungen aus?}\label{sec:enumerations}
 \begin{frame} 
-\frametitle{Wie sehen Aufzählungen aus?} 
-\framesubtitle{Ein Beispiel für Aufzählungen} 
-\begin{theorem}
-    Hier steht ein theorem
-\end{theorem} 
-\begin{enumerate} 
-    \item Hier steht ein item 
+    \frametitle{Wie sehen Aufzählungen aus?} 
+    \framesubtitle{Ein Beispiel für Aufzählungen} 
+    \begin{theorem}
+        Hier steht ein theorem oder Beispiel in default Farbe
+    \end{theorem}
+
+    % change the color of theorems from now on
+    \AtBeginEnvironment{theorem}{%
+        \setbeamercolor{block title}{use=example text,fg=white,bg=thk-orange}
+        \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+    }
+    \begin{theorem}
+        Hier steht ein zweites theorem in anderer Farbe
+    \end{theorem}
     \begin{enumerate} 
-        \item Hier steht ein subitem
+        \item Hier steht ein item 
         \begin{enumerate} 
-            \item Hier steht ein subsubitem
+            \item Hier steht ein subitem
+            \begin{enumerate} 
+                \item Hier steht ein subsubitem
+            \end{enumerate}
         \end{enumerate}
+        \item Hier steht noch ein etwas längeres item, um den Zeilenumbruch zu zeigen. 
+        Dieser wird automatisch gesetzt, sobald die Zeile zu lang wird.
     \end{enumerate}
-    \item Hier steht noch ein etwas längeres item, um den Zeilenumbruch zu zeigen. 
-    Dieser wird automatisch gesetzt, sobald die Zeile zu lang wird.
-\end{enumerate}
 \end{frame}
 
 \subsection{Wie sehen Bulletpoints aus?}\label{sec:itemize}
@@ -64,15 +80,6 @@
 \begin{frame}{Grafiken}
     \begin{figure}\label{thk-linien}
         \includegraphics[width=\textwidth]{figures/thk-lines.png}
-        \caption[TH Köln lines]{TH Köln lines. Adaptiert von \cite{source}}
-    \end{figure}
-\end{frame}
-
-\subsection{Grafiken nach Höhe}\label{sec:graphics_height}
-\begin{frame}{Grafiken nach Höhe}
-    \begin{figure}\label{thk-linien-hoch}
-        \includesvg[height=\textheight]{figures/thk-logo.svg} %there's an error with textheight
-        %should use textwidth instead as shown above
         \caption[TH Köln lines]{TH Köln lines. Adaptiert von \cite{source}}
     \end{figure}
 \end{frame}
