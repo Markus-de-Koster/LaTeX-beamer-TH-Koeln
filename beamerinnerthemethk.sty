@@ -1,23 +1,25 @@
 
 \mode<presentation>
 
-% Frame
-\defbeamertemplate*{frame}{thk}[1][]{
-    \fill[thk-orange, opacity=0.0] (0,0) rectangle(\thkmarginleft,\the\paperheight);
+\setbeamersize{sidebar width left=1.1cm}
+\defbeamertemplate*{sidebar left}{thk}[1][]{
+    
 }
+\setbeamersize{text margin left=0.3cm, text margin right=0pt} %new code
 
 % Frame title
 \defbeamertemplate*{frametitle}{thk}[1][]
 {
-\vskip0.5cm%
+\vskip0.4cm%
     \begin{beamercolorbox}[wd=\paperwidth,ht=0cm]{frametitle} 
         \begin{tikzpicture}
+            \useasboundingbox (\thkmarginleft,\the\paperheight) rectangle(\thkrest,0.8*\the\paperheight);
             %\fill[thk-orange, opacity=0.1] (0,0.8) rectangle(\the\paperwidth,2.9);
             \ifx\insertframesubtitle\@empty%
-                {\node[anchor=west, black,font=\large] at (\thkmarginleft,1.5){\insertframetitle};}
+                {\node[anchor=west, black,font=\large] at (\thkmarginleft,0.85*\the\paperheight){\insertframetitle};}
             \else%
-                {\node[anchor= west, black,font=\large] at (\thkmarginleft,1.7){\insertframetitle};%
-                \node[anchor= west, black,font=\small] at (\thkmarginleft,1.3){\insertframesubtitle};}%
+                {\node[anchor= west, black,font=\large] at (\thkmarginleft,0.85*\the\paperheight){\insertframetitle};%
+                \node[anchor= west, black,font=\small] at (\thkmarginleft,0.8*\the\paperheight){\insertframesubtitle};}%
             \fi
         \end{tikzpicture}
     \end{beamercolorbox}
