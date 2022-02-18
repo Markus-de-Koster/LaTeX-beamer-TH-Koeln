@@ -12,6 +12,7 @@ For presenting a tool like [Pympress](https://github.com/Cimbali/pympress) is en
 Simply clone the repository into a folder of your liking.
 At the beginning of your TeX file include `\usepackage{/path/to/LaTeX-beamer-TH-Koeln/beamerthemethk}`
 with either the relative or absolute path.
+Depending on your engine, you might have to install additional packages manually e.g. pdftex.
 
 ## Usage
 Work in Progress
