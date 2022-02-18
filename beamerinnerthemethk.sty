@@ -28,6 +28,7 @@
 % Title page
 \defbeamertemplate*{title page}{thk}[1][]
 { 
+    \vspace{-4em}
     \begin{tikzpicture}
         \useasboundingbox (0,0.15\paperheight) rectangle(\the\paperwidth,\the\paperheight);
         \node[anchor=west, font=\fontsize{15pt}{15pt}\selectfont, text=black]
@@ -46,7 +47,18 @@
 % Items
 \setbeamertemplate{items}[circle]
 \setbeamertemplate{enumerate items}[default]
-\setbeamertemplate{sections/subsections in toc}[circle]
+
+% let sections appear with numbers (in circles) in the toc
+\setbeamertemplate{section in toc}[circle]
+
+% subsections will be shown as bullet points
+\setbeamertemplate{subsection in toc}{
+    \hspace{1.2em}{\color{thk-violet}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+
+%change color of items in toc
+\setbeamercolor{section in toc}{fg=black} 
+%\setbeamercolor{subsection in toc}{fg=black} 
+
 
 %change color of itemize bullet points
 \setbeamercolor*{itemize item}{fg=thk-red}
@@ -58,7 +70,9 @@
 \setbeamercolor*{enumerate item}{fg=thk-red}
 \setbeamercolor*{enumerate subitem}{fg=thk-orange}
 \setbeamercolor*{enumerate subsubitem}{fg=thk-violet}
-%\setbeamercolor*{theorem}{fg=thk-violet}
+
+% Theorem / Beispiel
+%\setbeamercolor*{theorem}{fg=thk-violet} % this does not work for some reason, do this instead:
 \AtBeginEnvironment{theorem}{%
   \setbeamercolor{block title}{use=example text,fg=white,bg=thk-violet}
   \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
@@ -67,16 +81,11 @@
 %change color of subtitle
 \setbeamercolor*{subtitle}{fg=gray}
 
-
-%change color of items in toc
-\setbeamercolor{section in toc}{fg=black} 
-\setbeamercolor{subsection in toc}{fg=black} 
-
 %change font of number in toc section
 %\setbeamerfont{section number projected}{%
 %  family=\rmfamily,series=\bfseries,size=\normalsize}
 \setbeamercolor{section number projected}{bg=white,fg=thk-orange}
-%\setbeamercolor{subsection number projected}{bg=white,fg=thk-orange} %this doesn't do anything
+\setbeamercolor{subsection in toc number projected}{bg=white,fg=thk-orange} %this doesn't do anything
 %\setbeamercolor{subsubsection number projected}{bg=white,fg=thk-violet}
 
 \mode
