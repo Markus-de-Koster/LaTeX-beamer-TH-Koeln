@@ -20,6 +20,19 @@
 %all the rest, mostly used for width calculations
 \newcommand{\thkrest}{0.9*\the\paperwidth}
 
-%
+\newcommand{\supervisor}{\@dblarg\beamer@supervisor}
+\long\def\beamer@supervisor[#1]#2{%
+  \def\insertsupervisor{#2}  %
+  \def\insertshortsupervisor{#1}%
+  }
+\supervisor[Supervisor]{Supervisor or different subtext}
+
+\newcommand{\pagefooterlocalization}{\@dblarg\beamer@pagefooterlocalization}
+\long\def\beamer@pagefooterlocalization[#1]#2{%
+  \def\insertpagefooterlocalization{#2}  %
+  \def\insertshortpagefooterlocalization{#1}%
+  }
+\pagefooterlocalization[P. ]{Page }
+
 
 \mode<all>

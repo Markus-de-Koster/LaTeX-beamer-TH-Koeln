@@ -32,12 +32,12 @@
         % page %
         \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
             (N_date) at (\thkmarginleft,0.06*\the\paperheight) 
-            {\pagefooterlocalization \thepage};
+            {\insertpagefooterlocalization \thepage};
 
         % supervisor %
         \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
             (N_supervisor) at (2*\thkmarginleft,0.12*\the\paperheight) 
-            {\supervisor};
+            {\insertsupervisor};
 
         % title %
         \ifx\insertshortsubtitle\empty % check if a short title exists
