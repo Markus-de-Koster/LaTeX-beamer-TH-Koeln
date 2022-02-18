@@ -3,9 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{datetime}
 \renewcommand{\dateseparator}{..} % use dots instead of slashes to seperate dates
-\newcommand{\pagefooterlocalization}[1]{\gdef\pagefooterlocalization{#1}} %define a command to 
-\pagefooterlocalization{Seite } % can be anything, e.g. "Slide" "Page" "Seite"
-\newcommand{\supervisor}[1]{\gdef\supervisor{#1}} % define a new command for supervisor in the footer of every page
+\usetheme{thk}
 
 \title{\LaTeX -Beamer Theme TH Köln}
 \subtitle[Beispielpräsi]{Eine Beispielpräsentation}
@@ -14,8 +12,7 @@
 %you can also use this tag for different purposes
 \date[\ddmmyyyydate\today]{\today} %short date in brackets, long date in bracelets
 \author[de Koster]{Markus de Koster}
-
-\usetheme{thk}
+\pagefooterlocalization{Seite } % can be anything, e.g. "Slide" "Page" "Seite"
 
 \begin{document}
 
