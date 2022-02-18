@@ -76,20 +76,16 @@
         \node[anchor=east, font=\fontsize{4pt}{7pt}\selectfont, text=black]
                 (N_logo) at (\the\paperwidth -8,0.09*\the\paperheight) 
                 {\includesvg[width=.15\linewidth]{figures/thk-logo}};
-    %    \ifnum\thepage>1\relax % attempt at writing title author and date into the bottom rectangles on every page except for title
-    %        %\node at (0,0) {\small \insertauthor};
-    %        %\node at (\the\paperwidth/3,0) {\small \inserttitle};
-    %        %\node at (2*\the\paperwidth/3,0) {\small \insertdate};
-    %        \node[text width=\the\paperwidth/3, font=\fontsize{7pt}{7pt}\selectfont, text=light-gray]
-    %            (N1) at (0.8*\the\paperwidth/3,0.15) 
-    %            {\insertshortauthor};
-    %        \node[text width=\the\paperwidth/3, font=\fontsize{7pt}{7pt}\selectfont, text=light-gray]
-    %            (N2) at (1.55*\the\paperwidth/3,0.15) 
-    %            {\inserttitle};
-    %        \node[text width=\the\paperwidth/3, font=\fontsize{7pt}{7pt}\selectfont, text=light-gray]
-    %            (N3) at (2.7*\the\paperwidth/3,0.15) 
-    %            {\insertdate};
-    %    \fi
     \end{tikzpicture}
 }
+
+% footline bounding box
+\setbeamertemplate{footline}
+{
+  \hbox{%
+      \begin{beamercolorbox}[wd=1.00\paperwidth,ht=0.15\paperheight,dp=2ex,center]{white}%
+      \end{beamercolorbox}
+  }%
+}
+
 \mode<all>
