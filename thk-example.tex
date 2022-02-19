@@ -15,7 +15,7 @@
 \institute[TH Köln]{Technische Hochschule Köln}
 % if a short version is given, this will be preferred in the footer. To use the long version, don't give a short version
 \supervisor{Prof. Stefan Herzig} %leave empty if not applicable
-% you can also use this tag for different purposes
+% you can also use this tag for different purposes, e.g. to provide your email address
 \date[\ddmmyyyydate\today]{\today} %short date in brackets, long date in bracelets
 \author[de Koster]{Markus de Koster}
 \pagefooterlocalization{Seite } % can be anything, e.g. "Slide" "Page" "Seite"
@@ -74,21 +74,25 @@
     Innerhalb eines itemize erfolgt kein Seitenumbruch. Stattdessen werden die items skaliert. Das selbe gilt für Grafiken, Tabellen, etc.
 \end{frame}
 
-\section{Theoreme / Beispiele}\label{sec:theorem}
+\section{Tabellen}\label{sec:tables}
 \begin{frame} 
-    \frametitle{Theoreme und Beispiele} 
-    \begin{theorem}
-        Hier steht ein theorem oder Beispiel in default Farbe
-    \end{theorem}
+    \frametitle{Tabellen} 
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{l | l }
+          \textbf{Spalte 1}   & \textbf{Spalte 2} \\
+          \hline
+          SHA-1 &  20 bytes \\ 
+          \hline
+          SHA-256 &  32 bytes \\ 
+          \hline
+          SHA-512 &  64 bytes \\ 
+          \hline
+          MD5 &  16 bytes \\ 
+        \end{tabular}
+        \caption{\label{tab:example_table} Eine simple Beispieltabelle}
+    \end{table}
 
-    % change the color of theorems from now on
-    \AtBeginEnvironment{theorem}{%
-        \setbeamercolor{block title}{use=example text,fg=white,bg=thk-orange}
-        \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
-    }
-    \begin{theorem}
-        Hier steht ein zweites theorem in anderer Farbe. Es ist länger als eine Zeile, daher erfolgt ein automatischer Zeilenumbruch
-    \end{theorem}
 \end{frame}
 
 \section{Grafiken}\label{sec:graphics}
@@ -97,6 +101,22 @@
         \includegraphics[width=\textwidth]{figures/thk-lines.png}
         \caption[TH Köln lines]{TH Köln lines. Adaptiert von \cite{source}}
     \end{figure}
+\end{frame}
+
+\section{Blöcke und Theoreme}\label{sec:block}
+\begin{frame} 
+    \frametitle{Blöcke und Theoreme} 
+    \begin{theorem}
+        Hier steht ein theorem in default Farbe
+    \end{theorem}
+	
+	\begin{variableblock}{Variabler Block}{bg=white, fg=black}{bg=thk-red, fg=white}
+		Hier steht ein variabler Block. Die Farbe wird bei der Deklaration gesetzt.
+	\end{variableblock}
+
+    \begin{variableblock}{Variabler Block andere Farbe}{bg=white, fg=black}{bg=thk-orange, fg=white}
+        Hier steht ein zweiter variabler Block in anderer Farbe. Es ist länger als eine Zeile, daher erfolgt ein automatischer Zeilenumbruch
+    \end{variableblock}
 \end{frame}
 
 \end{document}
