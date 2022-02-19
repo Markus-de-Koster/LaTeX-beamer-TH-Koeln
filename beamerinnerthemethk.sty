@@ -1,7 +1,11 @@
 
 \mode<presentation>
 
-\setbeamersize{sidebar width left=1.1cm}
+\setbeamersize{sidebar width right=0.5cm} % sets a margin to the right
+\defbeamertemplate*{sidebar right}{thk}[1][]{
+    
+}
+\setbeamersize{sidebar width left=1.1cm} % sets the left margin
 \defbeamertemplate*{sidebar left}{thk}[1][]{
     
 }
@@ -74,9 +78,14 @@
 % Theorem / Beispiel
 %\setbeamercolor*{theorem}{fg=thk-violet} % this does not work for some reason, do this instead:
 \AtBeginEnvironment{theorem}{%
-  \setbeamercolor{block title}{use=example text,fg=white,bg=thk-violet}
-  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+  \setbeamercolor{block title}{use=theorem text,fg=white,bg=thk-violet}
+  \setbeamercolor{block body}{parent=normal text,use=block title theorem,bg=block title theorem.bg!10!bg}
 }
+
+\newenvironment{variableblock}[3]{%
+  \setbeamercolor{block body}{#2}
+  \setbeamercolor{block title}{#3}
+  \begin{block}{#1}}{\end{block}}
 
 %change color of subtitle
 \setbeamercolor*{subtitle}{fg=gray}
