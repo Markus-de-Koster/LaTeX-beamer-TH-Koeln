@@ -1,6 +1,6 @@
-# Beamer TH Koeln
+# LaTeX Beamer Presentations - TH Koeln
 
-LaTeX Beamer theme in design of TH Koeln
+LaTeX Beamer theme in design of TH Koeln (Cologne University of Applied Sciences) for presentations
 
 ## Description
 
@@ -48,3 +48,6 @@ Author of the TH Köln logo: Marius Barzynski, Anna Fitz, Benedikt Schmitz, Andr
 Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:TH_Koeln_Logo.svg)
 
 The example image on the title page was taken by me (Markus de Koster) and may be used without restrictions.
+
+## Tags
+Präsentationsvorlage, Presentation, Präsentation, TH Köln, Powerpoint Alternative LaTeX
