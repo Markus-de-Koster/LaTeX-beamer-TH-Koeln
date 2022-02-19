@@ -5,8 +5,14 @@ LaTeX Beamer theme in design of TH Koeln
 ## Description
 
 A theme for LaTeX beamer presentations in the design of cologne university of applied sciences (TH Köln).
-For presenting a tool like [Pympress](https://github.com/Cimbali/pympress) is encouraged.
+![Example for a title slide](figures/example_titlepage.png)
+You can insert your own images on the title page.
+Setting the title, author etc. will automatically adjust this on every page.
 
+![Example for a slide with block elements](figures/example_blockpage.png)
+All (or probably - most) elements try to use the university's color theme.
+
+For presenting I recommend a tool like [Pympress](https://github.com/Cimbali/pympress).
 
 ## Installation
 Simply clone the repository into a folder of your liking.
