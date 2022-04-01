@@ -15,10 +15,17 @@ All (or probably - most) elements try to use the university's color theme.
 For presenting I recommend a tool like [Pympress](https://github.com/Cimbali/pympress).
 
 ## Installation
+- Depending on your engine, you might have to install additional packages manually e.g. pdftex.
+- There are two options for including this theme in your presentation.
+
+### Option 1 (preferable if you want git updates)
 Simply clone the repository into a folder of your liking.
 At the beginning of your TeX file include `\usepackage{/path/to/LaTeX-beamer-TH-Koeln/beamerthemethk}`
 with either the relative or absolute path.
-Depending on your engine, you might have to install additional packages manually e.g. pdftex.
+
+### Option 2 (system wide)
+For a system wide installation of the theme, add the style files to your `texmf` tree.
+More instructions e.g. on [Stackexchange](https://tex.stackexchange.com/questions/1137/where-do-i-place-my-own-sty-or-cls-files-to-make-them-available-to-all-my-te)
 
 ## Why should I use LaTeX Beamer instead of Powerpoint?
 - integration of **plots** (e.g. through `pgfplots`)
