@@ -25,9 +25,10 @@ Depending on your engine, you might have to install additional packages manually
 - support for all kinds of **math symbols**
 - copy paste **code segments** without worrying about formatting
 - easy integration of **sources** through `BibTex`
-- quickly create a handout because of the **seperation of style and content** LaTeX provides
-- quickly create a beamer presentation from an existing LaTeX document
+- quickly create a handout from an existing Beamer presentation because of the **seperation of style and content** LaTeX provides
+- quickly create a Beamer presentation from an existing LaTeX document
 - consistent **formatting**
+- **cross platform**
 - **PDF** as output format
 
 
