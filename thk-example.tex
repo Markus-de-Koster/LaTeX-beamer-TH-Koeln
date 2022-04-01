@@ -13,27 +13,30 @@
 \title{\LaTeX -Beamer Theme TH Köln}
 \subtitle[Beispielpräsi]{Eine Beispielpräsentation}
 \institute[TH Köln]{Technische Hochschule Köln}
-% if a short version is given, this will be preferred in the footer. To use the long version, don't give a short version
-\supervisor{\insertinstitute} %leave empty if not applicable
-% you can also use this tag for different purposes, e.g. to provide your email address
-\date[\ddmmyyyydate\today]{\today} %short date in brackets, long date in bracelets
+% if a short version is given, the footer will preferably use it. If you don't provide a short version in brackets, only the long version will be used.
+\supervisor{\insertinstitute} %leave empty if not applicable or
+	% use this tag for different purposes, e.g. to provide your email address
+\date[\ddmmyyyydate\today]{\today} %short date in brackets, long date in braces
 \author{Markus de Koster}
 \pagefooterlocalization{Seite } % can be anything, e.g. "Slide" "Page" "Seite"
 
 \begin{document}
 
+% Title page
 \begin{frame}
     \vspace{2em} %some distance to the top
     \includegraphics[width=\textwidth]{figures/thk.jpg}
     \titlepage
 \end{frame}
 
+% Table of Contents
 \begin{frame}
     \frametitle{Inhalt}
     \tableofcontents
 \end{frame}
 
-\section{Aufzählungen}\label{sec:enumerations}
+% First slide
+\section{Aufzählungen}\label{sec:enumerations} % Sections are used for Table of Contents, Labels can be used for references to this section
 \begin{frame} 
     \frametitle{Aufzählungen} 
     \framesubtitle{Ein Beispiel für Aufzählungen} 
