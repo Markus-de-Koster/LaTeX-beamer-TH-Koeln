@@ -20,8 +20,20 @@ At the beginning of your TeX file include `\usepackage{/path/to/LaTeX-beamer-TH-
 with either the relative or absolute path.
 Depending on your engine, you might have to install additional packages manually e.g. pdftex.
 
+## Why should I use LaTeX Beamer instead of Powerpoint?
+- integration of **plots** (e.g. through `pgfplots`)
+- support for all kinds of **math symbols**
+- copy paste **code segments** without worrying about formatting
+- easy integration of **sources** through `BibTex`
+- quickly create a handout because of the **seperation of style and content** LaTeX provides
+- quickly create a beamer presentation from an existing LaTeX document
+- consistent **formatting**
+- **PDF** as output format
+
+
+
 ## Usage
-Work in Progress
+[Work in Progress] 
 For now, please follow the example TeX file.
 
 
