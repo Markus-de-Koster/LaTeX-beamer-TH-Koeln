@@ -2,12 +2,19 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{datetime}
+\usepackage{pgfplots} % 
+%\usepgfplotslibrary{external} % externalize plots so they don't recompile each time
+%\tikzexternalize
+\pgfplotsset{width=\textwidth,compat=1.16}
+\usepackage{colortbl} % colors for tables
 \renewcommand{\dateseparator}{.} % use dots instead of slashes to seperate dates
 \usetheme{thk}
 % custom colors:
 % thk-red
 % thk-orange
 % thk-violet
+% thk-red-0 to thk-red-9 give gradients from red to white, where 9 is almost all white
+% the same applies to all colors
 
 
 \title{\LaTeX -Beamer Theme TH Köln}
@@ -41,19 +48,18 @@
     \frametitle{Aufzählungen} 
     \framesubtitle{Ein Beispiel für Aufzählungen} 
     \begin{enumerate} 
-        \item Hier steht ein item 
+        \item item 
         \begin{enumerate} 
-            \item Hier steht ein subitem
+            \item subitem
             \begin{enumerate} 
-                \item Hier steht ein subsubitem
+                \item subsubitem
             \end{enumerate}
         \end{enumerate}
-        \item Hier steht noch ein etwas längeres item, um den Zeilenumbruch zu zeigen. 
-        Dieser wird automatisch gesetzt, sobald die Zeile zu lang wird.
+        \item item
     \end{enumerate}
 \end{frame}
 
-\subsection{Bulletpoints}\label{sec:itemize}
+\subsection*{Bulletpoints}\label{sec:itemize}
 \begin{frame}[allowframebreaks]{Bulletpoints}
     \begin{itemize}
         \item Die erste Stufe ist in rot
@@ -72,26 +78,32 @@
             \item \dots
         \end{itemize}
     \end{itemize}
-    Hier steht Text außerhalb von Bulletpoints. Wenn dieser Text lang genug ist, wird er auf die nächste Seite geschoben.
+    Wenn die Slide voll ist, wird dieser Text auf die nächste Seite geschoben.
     Dadurch wird automatisch im Titel der Seite ein Zähler eingefügt. 
-    Innerhalb eines itemize erfolgt kein Seitenumbruch. Stattdessen werden die items skaliert. Das selbe gilt für Grafiken, Tabellen, etc.
+    Innerhalb eines itemize erfolgt kein Seitenumbruch. 
+    Stattdessen werden die items skaliert. 
+    Das selbe gilt für Grafiken, Tabellen, etc.
 \end{frame}
+
+% colors for table columns
+\newcolumntype{v}{>{\columncolor{thk-violet-9}}c}
 
 \section{Tabellen}\label{sec:tables}
 \begin{frame} 
     \frametitle{Tabellen} 
     \begin{table}[ht]
         \centering
-        \begin{tabular}{l | l }
-          \textbf{Spalte 1}   & \textbf{Spalte 2} \\
+        \begin{tabular}{ v|l|l } 
+          \rowcolor{thk-violet-6}
+          \textbf{Name} & \textbf{Anzahl Bytes} & \textbf{Anzahl Bits} \\ 
           \hline
-          SHA-1 &  20 bytes \\ 
+          SHA-1 &  20 & 160 \\ 
           \hline
-          SHA-256 &  32 bytes \\ 
+          SHA-256 &  32 & 256 \\ 
           \hline
-          SHA-512 &  64 bytes \\ 
+          SHA-512 &  64 & 512 \\ 
           \hline
-          MD5 &  16 bytes \\ 
+          MD5 &  16 & 128 \\ 
         \end{tabular}
         \caption{\label{tab:example_table} Eine simple Beispieltabelle}
     \end{table}
@@ -110,16 +122,74 @@
 \begin{frame} 
     \frametitle{Blöcke und Theoreme} 
     \begin{theorem}
-        Hier steht ein theorem in default Farbe
+        Theoreme heißen immer Theorem und werden in Violet angezeigt.
     \end{theorem}
 	
-	\begin{variableblock}{Variabler Block}{bg=white, fg=black}{bg=thk-red, fg=white}
-		Hier steht ein variabler Block. Die Farbe wird bei der Deklaration gesetzt.
+	\begin{variableblock}{Variabler Block}{bg=thk-red-8, fg=black}{bg=thk-red, fg=white}
+		Farbe und Titel von Variablen Blöcken können manuell gesetzt werden
 	\end{variableblock}
 
-    \begin{variableblock}{Variabler Block andere Farbe}{bg=white, fg=black}{bg=thk-orange, fg=white}
-        Hier steht ein zweiter variabler Block in anderer Farbe. Es ist länger als eine Zeile, daher erfolgt ein automatischer Zeilenumbruch
+    \begin{variableblock}{Variabler Block anderer Farbe}{bg=thk-orange-8, fg=black}{bg=thk-orange, fg=white}
+        Inline Math: $\int_2^3 x^2 \, dx=\frac{3^3}{3}-\frac{2^3}{3}=\frac{19}{3}$
     \end{variableblock}
+\end{frame}
+
+\section{Spalten}\label{sec:columns}
+\begin{frame} 
+    \frametitle{Spalten} 
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Um mehrere Spalten zu erstellen, muss zuerst die columns Umgebung betreten werden
+                \item Danach kann die Spaltengröße für jede Spalte einzeln gesetzt werden
+                \item Sie sollte insgesamt die Textweite nicht übersteigen
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center}
+                \begin{figure}\label{thk-claudiusstr}
+                    \includegraphics[width=\textwidth]{figures/thk.jpg}
+                    \caption[TH Köln Claudiusstr.]{TH Köln Claudiusstraße 1. Quelle: eigene Aufnahme}
+                \end{figure}
+            \end{center}
+        \end{column}    
+    \end{columns}
+    
+    
+\end{frame}
+
+\section{Plots}\label{sec:plots}
+\begin{frame} 
+    \frametitle{Plots} 
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}\label{2dPlot}
+                \begin{tikzpicture}
+                    \begin{axis}
+                    \addplot[color=thk-red]{exp(x)};
+                    \addplot[color=thk-violet]{-2*x^2+ 50};
+                    \end{axis}
+                \end{tikzpicture}
+                \caption[2D Plot]{2D Plot using pgfplots}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}\label{3dPlot}
+                \begin{tikzpicture}
+                    \begin{axis}
+                    \addplot3[
+                        surf,
+                        colormap={rw}{color=(thk-red) color=(white)},
+                        samples=50, samples y=30,
+                        domain=-3.5:3.5,domain y=-1:1
+                    ]
+                    {((x+sin(deg(x)))^2};
+                    \end{axis}
+                \end{tikzpicture} 
+                \caption[3D Plot]{3D Plot using pgfplots and custom color map}
+            \end{figure}
+        \end{column}    
+    \end{columns}       
 \end{frame}
 
 \end{document}
