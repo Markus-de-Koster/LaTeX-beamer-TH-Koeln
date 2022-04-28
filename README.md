@@ -12,6 +12,8 @@ Setting the title, author etc. will automatically adjust this on every page.
 ![Example for a slide with block elements](figures/example_blockpage.png)
 All (or probably - most) elements try to use the university's color theme.
 
+Check out the [example PDF](thk-example.pdf) fore more details!
+
 For presenting I recommend a tool like [Pympress](https://github.com/Cimbali/pympress).
 
 ## Installation
@@ -42,7 +44,7 @@ More instructions e.g. on [Stackexchange](https://tex.stackexchange.com/question
 
 ## Usage
 [Work in Progress] 
-For now, please follow the example TeX file.
+For now, please follow the [example TeX file](thk-example.tex).
 
 
 ## Contributing
