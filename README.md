@@ -29,6 +29,15 @@ with either the relative or absolute path.
 For a system wide installation of the theme, add the style files to your `texmf` tree.
 More instructions e.g. on [Stackexchange](https://tex.stackexchange.com/questions/1137/where-do-i-place-my-own-sty-or-cls-files-to-make-them-available-to-all-my-te)
 
+#### Ubuntu
+Here is an explanation for Ubuntu using texlive
+1. move the style files to`/usr/share/texlive/texmf-dist/tex/latex/beamerthemethk`
+2. keep the figures folder in your working directory (i.e. where your `<mypresentation>.tex` file resides).
+  - this might change in the future when I have figured out how to do it
+3. Create an ls-R database `sudo mktexlsr`
+  - it might be necessary to also update your texmf tree `sudo update-texmf`
+5. `\usetheme{thk}` in your presentation file
+
 ## Why should I use LaTeX Beamer instead of Powerpoint?
 - integration of **plots** (e.g. through `pgfplots`)
 - support for all kinds of **math symbols**
