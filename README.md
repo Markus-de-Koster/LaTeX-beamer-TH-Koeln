@@ -41,14 +41,13 @@ Here is an explanation for Ubuntu using texlive
 ## Why should I use LaTeX Beamer instead of Powerpoint?
 - integration of **plots** (e.g. through `pgfplots`)
 - support for all kinds of **math symbols**
-- copy paste **code segments** without worrying about formatting
 - easy integration of **sources** through `BibTex`
-- quickly create a handout from an existing Beamer presentation because of the **seperation of style and content** LaTeX provides
-- quickly create a Beamer presentation from an existing LaTeX document
-- consistent **formatting**
 - **cross platform**
-- **PDF** as output format
 
+Reasons to prefer Powerpoint:
+- basically always if you don't need any of the features above
+- no need to fiddle with code even if you only want to change a minor visual detail
+- professional product with good support
 
 
 ## Usage
