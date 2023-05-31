@@ -20,54 +20,54 @@
 
         % date %
         \ifx\insertshortdate\empty
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_date) at (\thkmarginleft,0.12*\the\paperheight) 
                 {\insertdate};
         \else
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_date) at (\thkmarginleft,0.12*\the\paperheight) 
                 {\insertshortdate};
         \fi
 
         % page %
         \ifx\insertshortsupervisor\empty
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_date) at (\thkmarginleft,0.06*\the\paperheight) 
                 {\insertpagefooterlocalization \thepage};
         \else
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_date) at (\thkmarginleft,0.06*\the\paperheight) 
                 {\insertshortpagefooterlocalization \thepage};
         \fi
         % supervisor %
         \ifx\insertshortsupervisor\empty
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_supervisor) at (2*\thkmarginleft,0.12*\the\paperheight) 
                 {\insertsupervisor};
         \else
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_supervisor) at (2*\thkmarginleft,0.12*\the\paperheight) 
                 {\insertshortsupervisor};
         \fi
 
         % title %
         \ifx\insertshortsubtitle\empty % check if a short title exists
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_title) at (2*\thkmarginleft,0.09*\the\paperheight) 
                 {\inserttitle};
         \else
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_title) at (2*\thkmarginleft,0.09*\the\paperheight) 
                 {\insertshorttitle};
         \fi
 
         % author %
         \ifx\insertshortauthor\empty 
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_author) at (2*\thkmarginleft,0.06*\the\paperheight) 
                 {\insertauthor};
         \else
-            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black]
+            \node[anchor=west, font=\fontsize{4pt}{7pt}\selectfont, text=black, text width=\linewidth]
                 (N_author) at (2*\thkmarginleft,0.06*\the\paperheight) 
                 {\insertshortauthor};
         \fi

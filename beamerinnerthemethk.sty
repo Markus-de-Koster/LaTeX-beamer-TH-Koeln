@@ -20,10 +20,10 @@
             \useasboundingbox (\thkmarginleft,\the\paperheight) rectangle(\thkrest,0.8*\the\paperheight);
             %\fill[thk-orange, opacity=0.1] (0,0.8) rectangle(\the\paperwidth,2.9);
             \ifx\insertframesubtitle\@empty%
-                {\node[anchor=west, black,font=\large] at (\thkmarginleft,0.85*\the\paperheight){\insertframetitle};}
+                {\node[anchor=west, black,font=\large, text width=\linewidth] at (\thkmarginleft,0.85*\the\paperheight){\insertframetitle};}
             \else%
-                {\node[anchor= west, black,font=\large] at (\thkmarginleft,0.85*\the\paperheight){\insertframetitle};%
-                \node[anchor= west, black,font=\small] at (\thkmarginleft,0.8*\the\paperheight){\insertframesubtitle};}%
+                {\node[anchor= west, black,font=\large, text width=\linewidth] at (\thkmarginleft,0.85*\the\paperheight){\insertframetitle};%
+                \node[anchor= west, black,font=\small, text width=\linewidth] at (\thkmarginleft,0.8*\the\paperheight){\insertframesubtitle};}%
             \fi
         \end{tikzpicture}
     \end{beamercolorbox}
@@ -35,10 +35,10 @@
     \vspace{-4em}
     \begin{tikzpicture}
         \useasboundingbox (0,0.15\paperheight) rectangle(\the\paperwidth,\the\paperheight);
-        \node[anchor=west, font=\fontsize{15pt}{15pt}\selectfont, text=black]
+        \node[anchor=west, font=\fontsize{15pt}{15pt}\selectfont, text=black, text width=\linewidth]
             (N_titleA) at (0,0.85*\the\paperheight) 
             {\inserttitle};
-        \node[anchor=west, font=\fontsize{10pt}{10pt}\selectfont, text=gray]
+        \node[anchor=west, font=\fontsize{10pt}{10pt}\selectfont, text=gray, text width=\linewidth]
             (N_titleA) at (0,0.77*\the\paperheight) 
             {\insertsubtitle};
         %\node[anchor=west, font=\fontsize{8pt}{8pt}\selectfont, text=black]
